@@ -1,0 +1,16 @@
+polyheaven, sketch fab for models
+
+rgbe loader in three.js that loads hdri
+
+360 degree lighting
+
+const rgbeLoader = new RGBELoader();
+rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/zwartkops_pit_1k.hdr', (texture) => {
+  texture.mapping = THREE.EquirectangularReflectionMapping;
+  scene.background = texture;
+  scene.environment = texture;
+});
+
+loads from link
+
+gltf loader
