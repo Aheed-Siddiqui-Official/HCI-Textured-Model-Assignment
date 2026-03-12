@@ -42,7 +42,7 @@ const loader = new GLTFLoader();
 loader.load("./wooden_box.glb", function (gltf) {
   scene.add(gltf.scene);
 });
-
+//
 // Default lighting (will be overridden by HDRI when added)
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
