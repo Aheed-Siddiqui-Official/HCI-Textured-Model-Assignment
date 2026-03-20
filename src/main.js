@@ -24,8 +24,8 @@ renderer.toneMappingExposure = 1;
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
-// controls.autoRotate = true;
-// controls.autoRotateSpeed = 2;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 2;
 
 const rgbeLoader = new RGBELoader();
 rgbeLoader.load(
