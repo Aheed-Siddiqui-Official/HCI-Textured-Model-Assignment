@@ -1,3 +1,150 @@
+Self => Learnings/Notes
+
+
+
+
+web gl is backend complex way to create different animations and designs, models, trees etc
+
+web browsers have webgl pre installed
+
+three js give more defined objects and primitive objects
+
+web gl three js both use gpu
+
+we design on canvas
+
+canvas = screen
+
+in threeJs we continously design on screen
+
+the view from which you will see threeJs will show
+
+everything prints on canvas
+
+WebGlRenderer
+
+scene => your camera/eyes are looking from front, field of seeing, scene is whole world that is back of camera things that you cant see is scene, whole world is scene
+
+whole 3d world is scene
+
+in web browser positive y move down
+
+// shows depth of cube
+
+// mesh.position.x,y,z = 3
+// mesh.rotation.x,y,z = 1
+// mesh.scale.x,y,z = 3
+
+Math.pi rotate the element 180 degrees
+mesh.rotation.y = Math.PI * 1.2
+
+renderer.render(scene, camera) => contiously take picture and render again and again
+
+window.requestAnimationFrame(animate) => move till n times of computer limit
+
+till the time computer can render in 1 second e.g.120fps
+
+mesh.rotation.y += 0.1; => this function dont run same on all laptops because when request animation run the laptop with more fps tuns according to it like 30 fps, my laptop  
+
+mesh.rotation.y = clock.getElapsedTime(); => this rotates based on time not gpu performance
+
+antialias: true => to improve rough texture of corners, smoother output
+
+
+
+
+
+
+
+
+resize/responsive =>
+window.addEventListener("resize", () => {
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix()
+});
+
+if not write projection matrix the cube wil squeeze
+aspect ratio means to show elements based on screen width and height
+when ever we change camera settings we update projection matrix
+
+Orbit Controls =>
+controls.enableDamping = true => gives smooth movements
+controls.autoRotate = true
+explore controls options
+controls.dampingFactor = 0.05 => rotates cube for long time
+
+geometries => 
+skeletons like box
+
+
+
+
+
+sphere geometry =>
+
+cylinder geometry =>
+radial segments > more smooth edged but more power gpu
+open-ended => removed top and bottom
+side:THREE.DoubleSide => shows all sides instead of front face
+
+materials =>
+meshStandardMaterials => pbr based means when rotated they shine, or shadow real world material is called physically based rendering
+
+
+
+
+
+
+meshStandardMaterials => pbr based means when rotated they shine, or shadow real world material is called physically based rendering
+
+only appears when there is light
+
+its a real world object
+
+the light comes from light helpers
+
+metalness, roughness etc
+
+textures => means images
+
+let loader = new THREE.TextureLoader()
+
+textures =>
+// ─── Texture & Material ──────────────────────────────────────────────────
+const loader = new THREE.TextureLoader();
+const color = loader.load("./textures/color.jpg");
+const roughness = loader.load("./textures/roughness.jpg");
+const normal = loader.load("./textures/normal.png");
+
+const material = new THREE.MeshStandardMaterial({
+  map: color,
+  roughnessMap: roughness,
+  normalMap: normal,
+});
+
+lil-gui => package you can make panel
+you can make folders in lil-gui
+
+lights =>
+ambient, directional, point
+
+ambient light is the decent surrounding light around us
+equal light from all sides, no shadows
+
+directional light
+
+point light
+
+light helpers
+
+
+
+
+
+
+
+
 polyheaven, sketch fab for models
 
 rgbe loader in three.js that loads hdri
